@@ -69,6 +69,95 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-How-to-scrawl-the-news-data-completely" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/10/How-to-scrawl-the-news-data-completely/" class="article-date">
+  <time class="dt-published" datetime="2024-03-10T13:08:18.000Z" itemprop="datePublished">2024-03-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/03/10/How-to-scrawl-the-news-data-completely/">How to scrawl the news data completely</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>2024-03-10 21:08</p>
+<p>Recently, I was scrawling the news data. The target is simply web pages. So I use requests to get htmls and images.<br>Firstly, I downloaded the contens list of the news and try to extract urls of the adjacent pages. </p>
+<p>I tried using pywebcopy to download, but I don’t know why the early urls could download nothing and I didn’t search out any answer.</p>
+<p>Then I just used re and find to extract. However, I found maybe due to the orgnization of the content, I couldn’t download all the target news by scrawling.</p>
+<p>Since the format of url is “<a target="_blank" rel="noopener" href="http://www.domain.com/content/YearMMdd/%7B6:six-decimal">www.domain.com/content/YearMMdd/{6:six-decimal</a> numbers of total number of contents}”, and one html does not exceed 30kb, I decided to iterate the number and timestamp to make sure scrapying completely.</p>
+<p>Today I found python has a limit of recurrsion, which needed to be reset bigger with<br>import sys<br>sys.setrecursionlimit(10000)  </p>
+<p>And now the connect breaks every hundreds of requests. I need to learn more skills of VPS and scrawling.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/10/How-to-scrawl-the-news-data-completely/" data-id="cltljsipl0000b4vadfah7igf" data-title="How to scrawl the news data completely" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Summary-for-scrapying-of-last-two-weeks" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/10/Summary-for-scrapying-of-last-two-weeks/" class="article-date">
+  <time class="dt-published" datetime="2024-03-10T12:54:18.000Z" itemprop="datePublished">2024-03-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/03/10/Summary-for-scrapying-of-last-two-weeks/">Summary for scrapying of last two weeks</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>2024-03-10 20:54</p>
+<p>The most early version of street view just closed its website panel in 2023, I very treasure that data and I don’ t know when the only api in the app will close.<br>So I dive into frida hook as soon as the beginning from sketch, for before this I never think scrapying as too fancy tech.<br>At first, I only knew the app still had the street view, so I set up firda for my cp713 and flashed Redmi2 with Android 8 and magisk. However, I connected the frida with adb but it always throw error about the port was occupied. Then I tried the early version of the app and tried the Android x86, which all failed to connect with frida. Finally, I found httpcannary could capture the requests and responses just in the Android.<br>So I switched to httpcannary, again from sketch, for I haven’ t learned anything about Network. At first, I just looked the results, trying to find pictures directly. By the wway, I even searched the <a target="_blank" rel="noopener" href="http://www.archive.org/">www.archive.org</a>, it seems only captured the html files. By chance I finally an 60x60 res picture. Surprising and motivated, I began to check that HTTP request and response. This is my first time to check out HTTP communication and Web tessting, so at first I didn’t know what the “headers” mean. </p>
+<p>Along the process, I really searched a lot and learned a lot, which is quite enjoyable. Finding the first image, I just know if I could find the url, then I could find the data. So I checked the urls to surprisingly find they all had same params.<br>Then I searched the urls and params to find there was an API of the street view in 2020 and it was closed now. But I happened to find in a web page which still offered the api to request the id of the street view. At the same time, I found a new url of street view in a blog with 512x512 res.<br>So I began to search for how to scrap these with python, for again I haven’ t learned web API, HTML, XML, Json and anything about scraping. I only learned python when I make a script for doing vocabulary homework and Kaggle.</p>
+<p>From sketch, I learned from the blogs, searching all the times to make my first scraping from testing web page, finding the range of the pictures for its division method.<br>At first, without any knowledge about geography, I wanted to have four points’ lat and lng to loop all the points, for the street view id is encoding by lat and lng through the API. Soon I was confused by the huge number of loops, because the number of the decimal of the lat and lng is all 23, even for a small street, the number of loops has proceed 13.<br>Then I used the less number of decimal and selected manually to get the id_list, for it is relatively easy to use selenium to capture the image with the url as long as id is specified.<br>I also tried using requests to see whether I could directly get the image, but the response is hard to decode in the form of &#x2F;x, which I haven’ t learnd either and I didn’ t find any tools or packages.<br>Fotuately, selenium was good at capturing elements with driver. Then I used selenium to use the API page I found to simulate click to get id_list. It confused me that the value of id_element is blank as long as option(‘headless’). I searched and tried to add more options such as User-Agent but none of them worked, so I think it isn’t because the anti-scrapying detector, at least not in items of options.<br>So now descipite of the memory consumption of web pages, I finally could automatically download the street view pictures.</p>
+<p>I think it is not proper to post the code and url online. Although my Bandwidth usage is within 1Mbps, it maybe problem if it is widely used. And since the API is declared closed, I think the web page is just a leak.<br>However, I also wonder how this street view data will be handled. Since they closed the street view service in web and latest app, it seems they are going to close it. But these photos are from 2014-2015, at which time mobile phones were weak at taking photos. So I think these photos are more valuable than the cuurrent street view data.</p>
+<p>For me, this is my entrance of Network and scraping, the process of finding urls and proagramming is fun and really made me learn a huge new technologies. Also it brodan and enhanced my knowledge of python.<br>Also, this is the first time I have a hundround thousand amount of dataset of my own.<br>By the way, I found click process kinda interesting. At the beginning, it is common to think of iterate, and then tunning the step param just like Learning models will tell the most efficient choice.<br>Also for the first time I learned about cloud VPS and ECS with hardware efficiency of scraping and the anti-scraping.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/10/Summary-for-scrapying-of-last-two-weeks/" data-id="cltljsipp0001b4va7ka30ldt" data-title="Summary for scrapying of last two weeks" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-Draft-to-do-list" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2024/03/10/Draft-to-do-list/" class="article-date">
@@ -382,82 +471,6 @@
 
 
   
-    <article id="post-Hello-World-3" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/03/10/Hello-World-3/" class="article-date">
-  <time class="dt-published" datetime="2024-03-10T10:25:56.000Z" itemprop="datePublished">2024-03-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/03/10/Hello-World-3/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/10/Hello-World-3/" data-id="cltldd48h0000f4vagzvtcvwf" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Hello-World-2" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/03/10/Hello-World-2/" class="article-date">
-  <time class="dt-published" datetime="2024-03-10T10:00:26.000Z" itemprop="datePublished">2024-03-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/03/10/Hello-World-2/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/10/Hello-World-2/" data-id="cltlcg6r30002s0va7f7584ov" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -494,6 +507,14 @@
       <ul>
         
           <li>
+            <a href="/2024/03/10/How-to-scrawl-the-news-data-completely/">How to scrawl the news data completely</a>
+          </li>
+        
+          <li>
+            <a href="/2024/03/10/Summary-for-scrapying-of-last-two-weeks/">Summary for scrapying of last two weeks</a>
+          </li>
+        
+          <li>
             <a href="/2024/03/10/Draft-to-do-list/">Draft to-do list</a>
           </li>
         
@@ -503,14 +524,6 @@
         
           <li>
             <a href="/2024/03/10/Finally-not-404/">Finally not 404</a>
-          </li>
-        
-          <li>
-            <a href="/2024/03/10/Hello-World-6/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/2024/03/10/Hello-World-5/">Hello World</a>
           </li>
         
       </ul>
