@@ -69,6 +69,51 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Is-dd-full-copy-of-partions" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/11/Is-dd-full-copy-of-partions/" class="article-date">
+  <time class="dt-published" datetime="2024-03-11T01:51:00.000Z" itemprop="datePublished">2024-03-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/03/11/Is-dd-full-copy-of-partions/">Is dd full copy of partions?</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>2024-03-11 09:51</p>
+<p>While searching for making copy of Android deviecs, I found dd in linux is easy to use<br><a target="_blank" rel="noopener" href="https://android.stackexchange.com/questions/203891/how-to-take-full-image-backup-of-partitions-or-emmc">https://android.stackexchange.com/questions/203891/how-to-take-full-image-backup-of-partitions-or-emmc</a><br>So dd could make a full backup, while my goal is trying to recovery the wrapped data, I need the function like copy sectors of all uesd and spare ones.</p>
+<p>2024-03-11 10:05<br>So dd chould make a full copy of a disk.<br><a target="_blank" rel="noopener" href="https://serverfault.com/questions/4906/using-dd-for-disk-cloning">https://serverfault.com/questions/4906/using-dd-for-disk-cloning</a><br>With some attentions:<br>1.”clone disks having bad blocks: dd if&#x3D;&#x2F;dev&#x2F;sda of&#x3D;&#x2F;dev&#x2F;sdb bs&#x3D;4096 conv&#x3D;sync,noerror –<br>Sam Watkins Nov 14, 2014 at 6:52”</p>
+<p>2.”dd is most certainly the best cloning tool, it will create a 100% replica simply by using the following command. I’ve never once had any problems with it.<br>dd if&#x3D;&#x2F;dev&#x2F;sda of&#x3D;&#x2F;dev&#x2F;sdb bs&#x3D;32M status&#x3D;progress<br>Be aware that while cloning every byte, you should not use this on a drive or partition that is being used. Especially applications like databases can’t cope with this very well and you might end up with corrupted data.”</p>
+<p>Since there is no bad sectors in my m2c, now I need to do is specify the if command.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/11/Is-dd-full-copy-of-partions/" data-id="cltmb5pnd0000dsva3g0taeaf" data-title="Is dd full copy of partions?" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/emmc-Android-Extraction-linux/" rel="tag">emmc, Android Extraction, linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-Materials-for-reading-emmc-of-MTK-platform" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2024/03/11/Materials-for-reading-emmc-of-MTK-platform/" class="article-date">
@@ -444,44 +489,6 @@ which with enough resolution,
 
 
   
-    <article id="post-Hello-World-4" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/03/10/Hello-World-4/" class="article-date">
-  <time class="dt-published" datetime="2024-03-10T11:02:44.000Z" itemprop="datePublished">2024-03-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/03/10/Hello-World-4/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/10/Hello-World-4/" data-id="cltleo7yo0000v0vaeiqn83pr" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -500,7 +507,7 @@ which with enough resolution,
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MTK-Android-Extraction/" rel="tag">MTK, Android Extraction</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/street-view/" rel="tag">street view</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MTK-Android-Extraction/" rel="tag">MTK, Android Extraction</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/emmc-Android-Extraction-linux/" rel="tag">emmc, Android Extraction, linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/street-view/" rel="tag">street view</a></li></ul>
     </div>
   </div>
 
@@ -510,7 +517,7 @@ which with enough resolution,
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/MTK-Android-Extraction/" style="font-size: 10px;">MTK, Android Extraction</a> <a href="/tags/street-view/" style="font-size: 10px;">street view</a>
+      <a href="/tags/MTK-Android-Extraction/" style="font-size: 10px;">MTK, Android Extraction</a> <a href="/tags/emmc-Android-Extraction-linux/" style="font-size: 10px;">emmc, Android Extraction, linux</a> <a href="/tags/street-view/" style="font-size: 10px;">street view</a>
     </div>
   </div>
 
@@ -532,6 +539,10 @@ which with enough resolution,
       <ul>
         
           <li>
+            <a href="/2024/03/11/Is-dd-full-copy-of-partions/">Is dd full copy of partions?</a>
+          </li>
+        
+          <li>
             <a href="/2024/03/11/Materials-for-reading-emmc-of-MTK-platform/">Materials for reading emmc of MTK platform</a>
           </li>
         
@@ -545,10 +556,6 @@ which with enough resolution,
         
           <li>
             <a href="/2024/03/10/Summary-for-scrapying-of-last-two-weeks/">Summary for scrapying of last two weeks</a>
-          </li>
-        
-          <li>
-            <a href="/2024/03/10/Draft-to-do-list/">Draft to-do list</a>
           </li>
         
       </ul>
