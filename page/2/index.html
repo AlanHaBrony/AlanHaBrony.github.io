@@ -69,6 +69,51 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Find-Partions-in-dev" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/11/Find-Partions-in-dev/" class="article-date">
+  <time class="dt-published" datetime="2024-03-11T05:21:25.000Z" itemprop="datePublished">2024-03-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/03/11/Find-Partions-in-dev/">Find Partions in /dev/</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>2024-03-11 13:21</p>
+<p>Booting with recovery mode and connected adb, many guides said use “ls -l &#x2F;dev&#x2F;block&#x2F;by-name “ to find the block position if partions.<br>While when I doing this in my m2c, the contents in &#x2F;dev&#x2F;block&#x2F; is this:<br>loop0<br>loop1<br>loop2<br>loop3<br>loop4<br>loop5<br>loop6<br>loop7<br>mmcblk0<br>mmcblk0boot0<br>mmcblk0boot1<br>mmcblk0p1<br>mmcblk0p10<br>mmcblk0p11<br>mmcblk0p12<br>mmcblk0p13<br>mmcblk0p14<br>mmcblk0p15<br>mmcblk0p16<br>mmcblk0p17<br>mmcblk0p18<br>mmcblk0p19<br>mmcblk0p2<br>mmcblk0p20<br>mmcblk0p21<br>mmcblk0p22<br>mmcblk0p23<br>mmcblk0p24<br>mmcblk0p3<br>mmcblk0p4<br>mmcblk0p5<br>mmcblk0p6<br>mmcblk0p7<br>mmcblk0p8<br>mmcblk0p9<br>mmcblk0rpmb<br>mmcblk1<br>mmcblk1p1<br>platform<br>ram0<br>zram0</p>
+<p>I found the “by-name” is in &#x2F;dev&#x2F;block&#x2F;platform&#x2F;mtk-msdc.0 with contents:<br>by-name<br>by-num<br>mmcblk0<br>mmcblk0boot0<br>mmcblk0boot1<br>mmcblk0p1<br>mmcblk0p10<br>mmcblk0p11<br>mmcblk0p12<br>mmcblk0p13<br>mmcblk0p14<br>mmcblk0p15<br>mmcblk0p16<br>mmcblk0p17<br>mmcblk0p18<br>mmcblk0p19<br>mmcblk0p2<br>mmcblk0p20<br>mmcblk0p21<br>mmcblk0p22<br>mmcblk0p23<br>mmcblk0p24<br>mmcblk0p3<br>mmcblk0p4<br>mmcblk0p5<br>mmcblk0p6<br>mmcblk0p7<br>mmcblk0p8<br>mmcblk0p9<br>mmcblk0rpmb<br>mmcblk1<br>mmcblk1p1</p>
+<p>This is very similiar to my OPPO Find7 flashed CM14 and Redmi 2 flashed RR, which gives me a hint:<br>Maybe this decided by the OS, since these are all AOSP.</p>
+<p>Now I still wonder whether I could use “fastboot erase aboot” in mtk devices to get into Disk mode.<br>I didn’t find aboot in meilan2c, so I still need searching. But now I will setup tools to analysis the image file, again from sketch.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/11/Find-Partions-in-dev/" data-id="cltmiavk80003mkva0x7gbtl2" data-title="Find Partions in /dev/" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android-Extraction-emmc/" rel="tag">Android Extraction, emmc</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-Recover-Android-Data-after-Flashing" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2024/03/11/Recover-Android-Data-after-Flashing/" class="article-date">
@@ -471,48 +516,6 @@ which with enough resolution,
 
 
   
-    <article id="post-Draft-to-do-list" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/03/10/Draft-to-do-list/" class="article-date">
-  <time class="dt-published" datetime="2024-03-10T12:33:07.000Z" itemprop="datePublished">2024-03-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/03/10/Draft-to-do-list/">Draft to-do list</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>2024-03-10 20:33</p>
-<p>Well, gradually I found that in the never-dragging time, changes are invitable. Of crouse good changes are good.<br>But the loss is also along the way.<br>This is where I find the importance and value of data for memories. So I value meaningful data and try to save if needed. Also this helps to imporve and broaden my skills and knowledge.</p>
-<p>In the past two weeks, I finally made python scripts to scrap the street view data for my hometwon and the news of the web-page games.<br>Now I have just copied the sectors of my old Android phone to be extracted and recovered.</p>
-<p>Here is a draft list:<br>    1. Download street views of selected areas from various source<br>    2. Find the weather dataset of my hometwon and make analysis<br>    3. Download news of web-page games nearly 500000 htmls<br>    4. Extract and try to recover data of Android image<br>    5. Find ways to extract data from MTK and higher Android versions</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/10/Draft-to-do-list/" data-id="cltlill7n00007wva21hd5c7c" data-title="Draft to-do list" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -531,7 +534,7 @@ which with enough resolution,
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/9008-Miflash/" rel="tag">9008, Miflash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Extraction/" rel="tag">Android Extraction</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Extraction-Data-Recovery-emmc/" rel="tag">Android Extraction, Data Recovery, emmc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Extraction-emmc/" rel="tag">Android Extraction, emmc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Extraction-emmc-CM/" rel="tag">Android Extraction, emmc, CM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Extraction-file-carving-linux/" rel="tag">Android Extraction, file carving, linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Anime/" rel="tag">Anime</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Recovery-Android-Extraction/" rel="tag">Data Recovery, Android Extraction</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MTK-Android-Extraction/" rel="tag">MTK, Android Extraction</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/emmc-Android-Extraction-linux/" rel="tag">emmc, Android Extraction, linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mtk/" rel="tag">mtk</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mtk-emmc-Android-Extraction/" rel="tag">mtk, emmc, Android Extraction</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/street-view/" rel="tag">street view</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/9008-Miflash/" rel="tag">9008, Miflash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Extraction/" rel="tag">Android Extraction</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Extraction-Data-Recovery-emmc/" rel="tag">Android Extraction, Data Recovery, emmc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Extraction-emmc/" rel="tag">Android Extraction, emmc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Extraction-emmc-CM/" rel="tag">Android Extraction, emmc, CM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Extraction-file-carving-linux/" rel="tag">Android Extraction, file carving, linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Anime/" rel="tag">Anime</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Anroid-Flashing/" rel="tag">Anroid Flashing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Recovery-Android-Extraction/" rel="tag">Data Recovery, Android Extraction</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MTK-Android-Extraction/" rel="tag">MTK, Android Extraction</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/emmc-Android-Extraction-linux/" rel="tag">emmc, Android Extraction, linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mtk/" rel="tag">mtk</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mtk-emmc-Android-Extraction/" rel="tag">mtk, emmc, Android Extraction</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/street-view/" rel="tag">street view</a></li></ul>
     </div>
   </div>
 
@@ -541,7 +544,7 @@ which with enough resolution,
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/9008-Miflash/" style="font-size: 10px;">9008, Miflash</a> <a href="/tags/Android-Extraction/" style="font-size: 10px;">Android Extraction</a> <a href="/tags/Android-Extraction-Data-Recovery-emmc/" style="font-size: 10px;">Android Extraction, Data Recovery, emmc</a> <a href="/tags/Android-Extraction-emmc/" style="font-size: 20px;">Android Extraction, emmc</a> <a href="/tags/Android-Extraction-emmc-CM/" style="font-size: 10px;">Android Extraction, emmc, CM</a> <a href="/tags/Android-Extraction-file-carving-linux/" style="font-size: 10px;">Android Extraction, file carving, linux</a> <a href="/tags/Anime/" style="font-size: 10px;">Anime</a> <a href="/tags/Data-Recovery-Android-Extraction/" style="font-size: 10px;">Data Recovery, Android Extraction</a> <a href="/tags/MTK-Android-Extraction/" style="font-size: 10px;">MTK, Android Extraction</a> <a href="/tags/emmc-Android-Extraction-linux/" style="font-size: 10px;">emmc, Android Extraction, linux</a> <a href="/tags/mtk/" style="font-size: 10px;">mtk</a> <a href="/tags/mtk-emmc-Android-Extraction/" style="font-size: 10px;">mtk, emmc, Android Extraction</a> <a href="/tags/street-view/" style="font-size: 10px;">street view</a>
+      <a href="/tags/9008-Miflash/" style="font-size: 10px;">9008, Miflash</a> <a href="/tags/Android-Extraction/" style="font-size: 10px;">Android Extraction</a> <a href="/tags/Android-Extraction-Data-Recovery-emmc/" style="font-size: 10px;">Android Extraction, Data Recovery, emmc</a> <a href="/tags/Android-Extraction-emmc/" style="font-size: 20px;">Android Extraction, emmc</a> <a href="/tags/Android-Extraction-emmc-CM/" style="font-size: 10px;">Android Extraction, emmc, CM</a> <a href="/tags/Android-Extraction-file-carving-linux/" style="font-size: 10px;">Android Extraction, file carving, linux</a> <a href="/tags/Anime/" style="font-size: 10px;">Anime</a> <a href="/tags/Anroid-Flashing/" style="font-size: 10px;">Anroid Flashing</a> <a href="/tags/Data-Recovery-Android-Extraction/" style="font-size: 10px;">Data Recovery, Android Extraction</a> <a href="/tags/MTK-Android-Extraction/" style="font-size: 10px;">MTK, Android Extraction</a> <a href="/tags/emmc-Android-Extraction-linux/" style="font-size: 10px;">emmc, Android Extraction, linux</a> <a href="/tags/mtk/" style="font-size: 10px;">mtk</a> <a href="/tags/mtk-emmc-Android-Extraction/" style="font-size: 10px;">mtk, emmc, Android Extraction</a> <a href="/tags/street-view/" style="font-size: 10px;">street view</a>
     </div>
   </div>
 
@@ -563,6 +566,10 @@ which with enough resolution,
       <ul>
         
           <li>
+            <a href="/2024/03/13/9008-and-9006/">9008 and 9006</a>
+          </li>
+        
+          <li>
             <a href="/2024/03/13/Unbrick-wt88047-and-Extract-flyme-cloud-files/">Unbrick wt88047 and Extract flyme cloud files</a>
           </li>
         
@@ -576,10 +583,6 @@ which with enough resolution,
         
           <li>
             <a href="/2024/03/12/Basic-examination-with-Imager/">Basic examination with Imager</a>
-          </li>
-        
-          <li>
-            <a href="/2024/03/12/Plan-for-the-Weather/">Plan for the Weather</a>
           </li>
         
       </ul>
