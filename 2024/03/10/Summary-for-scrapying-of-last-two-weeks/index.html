@@ -1,247 +1,37 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  
-  <title>Summary for scrapying of last two weeks | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="2024-03-10 20:54 The most early version of street view just closed its website panel in 2023, I very treasure that data and I don’ t know when the only api in the app will close.So I dive into frida h">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Summary for scrapying of last two weeks">
-<meta property="og:url" content="http://example.com/2024/03/10/Summary-for-scrapying-of-last-two-weeks/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="2024-03-10 20:54 The most early version of street view just closed its website panel in 2023, I very treasure that data and I don’ t know when the only api in the app will close.So I dive into frida h">
-<meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-03-10T12:54:18.000Z">
-<meta property="article:modified_time" content="2024-03-10T12:59:35.114Z">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
-  
-<link rel="stylesheet" href="/css/style.css">
-
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
-  
-  
-<meta name="generator" content="Hexo 7.1.1"></head>
-
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-        
-          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
-        
-        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main"><article id="post-Summary-for-scrapying-of-last-two-weeks" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/03/10/Summary-for-scrapying-of-last-two-weeks/" class="article-date">
-  <time class="dt-published" datetime="2024-03-10T12:54:18.000Z" itemprop="datePublished">2024-03-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="p-name article-title" itemprop="headline name">
-      Summary for scrapying of last two weeks
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>2024-03-10 20:54</p>
-<p>The most early version of street view just closed its website panel in 2023, I very treasure that data and I don’ t know when the only api in the app will close.<br>So I dive into frida hook as soon as the beginning from sketch, for before this I never think scrapying as too fancy tech.<br>At first, I only knew the app still had the street view, so I set up firda for my cp713 and flashed Redmi2 with Android 8 and magisk. However, I connected the frida with adb but it always throw error about the port was occupied. Then I tried the early version of the app and tried the Android x86, which all failed to connect with frida. Finally, I found httpcannary could capture the requests and responses just in the Android.<br>So I switched to httpcannary, again from sketch, for I haven’ t learned anything about Network. At first, I just looked the results, trying to find pictures directly. By the wway, I even searched the <a target="_blank" rel="noopener" href="http://www.archive.org/">www.archive.org</a>, it seems only captured the html files. By chance I finally an 60x60 res picture. Surprising and motivated, I began to check that HTTP request and response. This is my first time to check out HTTP communication and Web tessting, so at first I didn’t know what the “headers” mean. </p>
-<p>Along the process, I really searched a lot and learned a lot, which is quite enjoyable. Finding the first image, I just know if I could find the url, then I could find the data. So I checked the urls to surprisingly find they all had same params.<br>Then I searched the urls and params to find there was an API of the street view in 2020 and it was closed now. But I happened to find in a web page which still offered the api to request the id of the street view. At the same time, I found a new url of street view in a blog with 512x512 res.<br>So I began to search for how to scrap these with python, for again I haven’ t learned web API, HTML, XML, Json and anything about scraping. I only learned python when I make a script for doing vocabulary homework and Kaggle.</p>
-<p>From sketch, I learned from the blogs, searching all the times to make my first scraping from testing web page, finding the range of the pictures for its division method.<br>At first, without any knowledge about geography, I wanted to have four points’ lat and lng to loop all the points, for the street view id is encoding by lat and lng through the API. Soon I was confused by the huge number of loops, because the number of the decimal of the lat and lng is all 23, even for a small street, the number of loops has proceed 13.<br>Then I used the less number of decimal and selected manually to get the id_list, for it is relatively easy to use selenium to capture the image with the url as long as id is specified.<br>I also tried using requests to see whether I could directly get the image, but the response is hard to decode in the form of &#x2F;x, which I haven’ t learnd either and I didn’ t find any tools or packages.<br>Fotuately, selenium was good at capturing elements with driver. Then I used selenium to use the API page I found to simulate click to get id_list. It confused me that the value of id_element is blank as long as option(‘headless’). I searched and tried to add more options such as User-Agent but none of them worked, so I think it isn’t because the anti-scrapying detector, at least not in items of options.<br>So now descipite of the memory consumption of web pages, I finally could automatically download the street view pictures.</p>
-<p>I think it is not proper to post the code and url online. Although my Bandwidth usage is within 1Mbps, it maybe problem if it is widely used. And since the API is declared closed, I think the web page is just a leak.<br>However, I also wonder how this street view data will be handled. Since they closed the street view service in web and latest app, it seems they are going to close it. But these photos are from 2014-2015, at which time mobile phones were weak at taking photos. So I think these photos are more valuable than the cuurrent street view data.</p>
-<p>For me, this is my entrance of Network and scraping, the process of finding urls and proagramming is fun and really made me learn a huge new technologies. Also it brodan and enhanced my knowledge of python.<br>Also, this is the first time I have a hundround thousand amount of dataset of my own.<br>By the way, I found click process kinda interesting. At the beginning, it is common to think of iterate, and then tunning the step param just like Learning models will tell the most efficient choice.<br>Also for the first time I learned about cloud VPS and ECS with hardware efficiency of scraping and the anti-scraping.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/10/Summary-for-scrapying-of-last-two-weeks/" data-id="cltljsipp0001b4va7ka30ldt" data-title="Summary for scrapying of last two weeks" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2024/03/10/How-to-scrawl-the-news-data-completely/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          How to scrawl the news data completely
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2024/03/10/Draft-to-do-list/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Draft to-do list</div>
-    </a>
-  
-</nav>
-
-  
-</article>
+{% extends '_layout.swig' %}
+{% import '_macro/post.swig' as post_template %}
+{% import '_macro/sidebar.swig' as sidebar_template %}
 
 
-</section>
-        
-          <aside id="sidebar">
-  
-    
+{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/9008-Miflash/" rel="tag">9008, Miflash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Extraction/" rel="tag">Android Extraction</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Extraction-Data-Recovery-emmc/" rel="tag">Android Extraction, Data Recovery, emmc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Extraction-emmc/" rel="tag">Android Extraction, emmc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Extraction-emmc-CM/" rel="tag">Android Extraction, emmc, CM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-Extraction-file-carving-linux/" rel="tag">Android Extraction, file carving, linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Anime/" rel="tag">Anime</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Anroid-Flashing/" rel="tag">Anroid Flashing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Recovery-9008/" rel="tag">Data Recovery, 9008</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Recovery-Android-Extraction/" rel="tag">Data Recovery, Android Extraction</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MTK-Android-Extraction/" rel="tag">MTK, Android Extraction</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Miflash-9008/" rel="tag">Miflash, 9008</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/emmc-Android-Extraction-linux/" rel="tag">emmc, Android Extraction, linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mtk/" rel="tag">mtk</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mtk-emmc-Android-Extraction/" rel="tag">mtk, emmc, Android Extraction</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/street-view/" rel="tag">street view</a></li></ul>
+{% block page_class %}page-post-detail{% endblock %}
+
+
+{% block content %}
+
+  <div id="posts" class="posts-expand">
+    {{ post_template.render(page) }}
+
+    <div class="post-spread">
+      {% if theme.jiathis %}
+        {% include '_partials/share/jiathis.swig' %}
+      {% elseif theme.baidushare %}
+        {% include '_partials/share/baidushare.swig' %}
+      {% elseif theme.add_this_id %}
+        {% include '_partials/share/add-this.swig' %}
+      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
+        {% include '_partials/share/duoshuo_share.swig' %}
+      {% endif %}
     </div>
   </div>
 
+{% endblock %}
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/9008-Miflash/" style="font-size: 10px;">9008, Miflash</a> <a href="/tags/Android-Extraction/" style="font-size: 20px;">Android Extraction</a> <a href="/tags/Android-Extraction-Data-Recovery-emmc/" style="font-size: 10px;">Android Extraction, Data Recovery, emmc</a> <a href="/tags/Android-Extraction-emmc/" style="font-size: 20px;">Android Extraction, emmc</a> <a href="/tags/Android-Extraction-emmc-CM/" style="font-size: 10px;">Android Extraction, emmc, CM</a> <a href="/tags/Android-Extraction-file-carving-linux/" style="font-size: 10px;">Android Extraction, file carving, linux</a> <a href="/tags/Anime/" style="font-size: 10px;">Anime</a> <a href="/tags/Anroid-Flashing/" style="font-size: 10px;">Anroid Flashing</a> <a href="/tags/Data-Recovery-9008/" style="font-size: 10px;">Data Recovery, 9008</a> <a href="/tags/Data-Recovery-Android-Extraction/" style="font-size: 10px;">Data Recovery, Android Extraction</a> <a href="/tags/MTK-Android-Extraction/" style="font-size: 10px;">MTK, Android Extraction</a> <a href="/tags/Miflash-9008/" style="font-size: 10px;">Miflash, 9008</a> <a href="/tags/emmc-Android-Extraction-linux/" style="font-size: 10px;">emmc, Android Extraction, linux</a> <a href="/tags/mtk/" style="font-size: 10px;">mtk</a> <a href="/tags/mtk-emmc-Android-Extraction/" style="font-size: 10px;">mtk, emmc, Android Extraction</a> <a href="/tags/street-view/" style="font-size: 10px;">street view</a>
-    </div>
-  </div>
+{% block sidebar %}
+  {{ sidebar_template.render(true) }}
+{% endblock %}
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2024/03/14/Caution-with-Android-encryption/">Caution with Android encryption</a>
-          </li>
-        
-          <li>
-            <a href="/2024/03/14/Fix-Miflash-cannot-receive-hello-packet/">Fix Miflash cannot receive hello packet</a>
-          </li>
-        
-          <li>
-            <a href="/2024/03/13/Recovery-Android-photos-deleted-by-cutting/">Recovery Android photos deleted by cutting</a>
-          </li>
-        
-          <li>
-            <a href="/2024/03/13/9008-and-9006/">9008 and 9006</a>
-          </li>
-        
-          <li>
-            <a href="/2024/03/13/Unbrick-wt88047-and-Extract-flyme-cloud-files/">Unbrick wt88047 and Extract flyme cloud files</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2024 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/js/jquery-3.6.4.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
-</body>
-</html>
+{% block script_extra %}
+  {% include '_scripts/pages/post-details.swig' %}
+{% endblock %}
